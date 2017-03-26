@@ -34,7 +34,7 @@
  */
 
 #include <SPI.h>
-#include <MFRC522.h>
+#include <MFRC522Extended.h>
 #include <Desfire.h>
 
 #define RST_PIN         9          // Configurable, see typical pin layout above

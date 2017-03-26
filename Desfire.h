@@ -3,7 +3,7 @@
 
 #include <Arduino.h>
 #include <SPI.h>
-#include <MFRC522.h>
+#include <MFRC522Extended.h>
 
 /* --------------------------------------
 * DESFire Logical Structure
@@ -14,7 +14,7 @@
 #define MIFARE_UID_BYTES             7  /* number of UID bytes */
 #define MIFARE_AID_SIZE              3  /* number of AID bytes */
 
-class DESFire : public MFRC522 {
+class DESFire : public MFRC522Extended {
 public:
 	// DESFire Status and Error Codes.
 	enum DesfireStatusCode : byte {
@@ -128,9 +128,9 @@ public:
 	/////////////////////////////////////////////////////////////////////////////////////
 	// Functions for setting up the Arduino
 	/////////////////////////////////////////////////////////////////////////////////////
-	explicit DESFire() : MFRC522() {};
-	explicit DESFire(byte resetPowerDownPin) : MFRC522(resetPowerDownPin) {};
-	explicit DESFire(byte chipSelectPin, byte resetPowerDownPin) : MFRC522(chipSelectPin, resetPowerDownPin) {};
+	explicit DESFire() : MFRC522Extended() {};
+	explicit DESFire(byte resetPowerDownPin) : MFRC522Extended(resetPowerDownPin) {};
+	explicit DESFire(byte chipSelectPin, byte resetPowerDownPin) : MFRC522Extended(chipSelectPin, resetPowerDownPin) {};
 
 	/////////////////////////////////////////////////////////////////////////////////////
 	// ISO/IEC 14443 functions not currentlly present in MFRC522 library
